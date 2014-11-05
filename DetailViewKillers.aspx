@@ -34,6 +34,18 @@
         </asp:SqlDataSource>
         <br />
         <br />
+        <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="ID" DataSourceID="Sql_DetailView" Height="71px" Width="468px">
+            <Fields>
+                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                <asp:BoundField DataField="Country" HeaderText="Country" SortExpression="Country" />
+                <asp:BoundField DataField="Years_Active" HeaderText="Years Active" SortExpression="Years_Active" />
+                <asp:BoundField DataField="Proven_Victims" HeaderText="Proven Victims" SortExpression="Proven_Victims" />
+                <asp:BoundField DataField="Possible_Victims" HeaderText="Possible Victims" SortExpression="Possible_Victims" />
+                <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+            </Fields>
+        </asp:DetailsView>
+        <br />
     
     </div>
     </form>
