@@ -35,14 +35,13 @@
         <br />
         <asp:HyperLink ID="InsertNewKiller" runat="server" NavigateUrl="~/InsertNewKillers.aspx">New Killer Record</asp:HyperLink>
         <br />
+        <br />
         <asp:GridView ID="GV_Default" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="Sql_Default">
             <Columns>
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                 <asp:BoundField DataField="Country" HeaderText="Country" SortExpression="Country" />
-                <asp:BoundField DataField="Years_Active" HeaderText="Years Active" SortExpression="Years_Active" />
                 <asp:BoundField DataField="Proven_Victims" HeaderText="Proven Victims" SortExpression="Proven_Victims" />
-                <asp:BoundField DataField="Possible_Victims" HeaderText="Possible Victims" SortExpression="Possible_Victims" />
-                <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
+                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="DetailViewKillers.aspx?ID={0}" Text="Select" />
             </Columns>
         </asp:GridView>
         <br />
