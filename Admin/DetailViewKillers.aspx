@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="~/Css/stylesheet.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -36,7 +37,7 @@
             </UpdateParameters>
         </asp:SqlDataSource>
         <br />
-        <asp:Label ID="lbl_DeletedKillers" runat="server"></asp:Label>
+        <span class="deletedkillers"><asp:Label ID="lbl_DeletedKillers" runat="server"></asp:Label></span>
         <br />
         <asp:DetailsView ID="DV_KillersDetail" runat="server" AutoGenerateRows="False" DataKeyNames="ID" DataSourceID="Sql_DetailView" Height="71px" Width="468px">
             <Fields>

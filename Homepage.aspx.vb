@@ -1,5 +1,5 @@
 ﻿
-Partial Class Admin_Default
+Partial Class Homepage
     Inherits System.Web.UI.Page
 
 End Class

@@ -1,0 +1,54 @@
+﻿<%@ Master Language="VB" CodeFile="SerialKillers.master.vb" Inherits="SerialKillers" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    </title>
+    <link rel="stylesheet" type="text/css" href="~/Css/stylesheet.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+    <div id="container">
+        <div id="header">
+        <h1>Serial Killers</h1>
+        <h3>List of serial killers by number of victims</h3>
+        </div> <!-- close the header DIV -->
+
+        <div id="right_header">
+
+            <asp:Image ID="logo" runat="server" Height="150px" ImageUrl="~/Css/logo.png" />
+
+        </div> <!-- close the right header DIV -->
+
+        <div id="menu">
+        <ul id="nav">
+            <li><asp:HyperLink ID="link_Home" runat="server" NavigateUrl="~/Homepage.aspx">Home</asp:HyperLink></li>
+            <li><asp:HyperLink ID="link_ViewAll" runat="server" NavigateUrl="~/Default.aspx">View Recorded Killers</asp:HyperLink></li>
+            <li><asp:HyperLink ID="link_Admin" runat="server" NavigateUrl="~/Admin/Homepage.aspx">Admin</asp:HyperLink></li>
+        </ul>
+        </div> <!-- close the menu DIV -->
+
+        <div id="main">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div> <!-- close the main DIV -->
+    
+        <div id="footer">
+            &copy; 2014 MSCI:3300 - Software Design and Development
+        </div>  <!-- close the footer DIV -->
+        
+    
+    
+    </div> <!-- close the container DIV -->
+        
+    
+    
+    </form>
+</body>
+</html>
