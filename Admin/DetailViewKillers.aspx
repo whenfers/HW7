@@ -1,17 +1,13 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="DetailViewKillers.aspx.vb" Inherits="DetailViewKillers" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/SerialKillers.master" AutoEventWireup="false" CodeFile="DetailViewKillers.aspx.vb" Inherits="Admin_DetailViewKillers" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+     <title>Serial Killers - List of serial killers by number of victims</title> 
+    <link rel="stylesheet" type="text/css" href="../Css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/admin_stylesheet.css" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="~/Css/stylesheet.css" />
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-        <asp:SqlDataSource ID="Sql_DetailView" runat="server" ConnectionString="<%$ ConnectionStrings:db_stateFacts %>" DeleteCommand="DELETE FROM [hwang44_HW7_SerialKiller] WHERE [ID] = @ID" InsertCommand="INSERT INTO [hwang44_HW7_SerialKiller] ([Name], [Country], [Years_Active], [Proven_Victims], [Possible_Victims], [Notes]) VALUES (@Name, @Country, @Years_Active, @Proven_Victims, @Possible_Victims, @Notes)" SelectCommand="SELECT * FROM [hwang44_HW7_SerialKiller] WHERE ([ID] = @ID)" UpdateCommand="UPDATE [hwang44_HW7_SerialKiller] SET [Name] = @Name, [Country] = @Country, [Years_Active] = @Years_Active, [Proven_Victims] = @Proven_Victims, [Possible_Victims] = @Possible_Victims, [Notes] = @Notes WHERE [ID] = @ID">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:SqlDataSource ID="Sql_DetailView" runat="server" ConnectionString="<%$ ConnectionStrings:db_stateFacts %>" DeleteCommand="DELETE FROM [hwang44_HW7_SerialKiller] WHERE [ID] = @ID" InsertCommand="INSERT INTO [hwang44_HW7_SerialKiller] ([Name], [Country], [Years_Active], [Proven_Victims], [Possible_Victims], [Notes]) VALUES (@Name, @Country, @Years_Active, @Proven_Victims, @Possible_Victims, @Notes)" SelectCommand="SELECT * FROM [hwang44_HW7_SerialKiller] WHERE ([ID] = @ID)" UpdateCommand="UPDATE [hwang44_HW7_SerialKiller] SET [Name] = @Name, [Country] = @Country, [Years_Active] = @Years_Active, [Proven_Victims] = @Proven_Victims, [Possible_Victims] = @Possible_Victims, [Notes] = @Notes WHERE [ID] = @ID">
             <DeleteParameters>
                 <asp:Parameter Name="ID" Type="Int32" />
             </DeleteParameters>
@@ -39,7 +35,16 @@
         <br />
         <span class="deletedkillers"><asp:Label ID="lbl_DeletedKillers" runat="server"></asp:Label></span>
         <br />
-        <asp:DetailsView ID="DV_KillersDetail" runat="server" AutoGenerateRows="False" DataKeyNames="ID" DataSourceID="Sql_DetailView" Height="71px" Width="468px">
+        <asp:DetailsView 
+            class ="DetailGrid"
+            FieldHeaderStyle-CssClass ="FieldHeader"
+            CommandRowStyle-CssClass ="Command"
+            ID="DV_KillersDetail" 
+            runat="server" 
+            AutoGenerateRows="False" 
+            DataKeyNames="ID" 
+            DataSourceID="Sql_DetailView" 
+       >
             <Fields>
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                 <asp:BoundField DataField="Country" HeaderText="Country" SortExpression="Country" />
@@ -51,8 +56,6 @@
             </Fields>
         </asp:DetailsView>
         <br />
-    
-    </div>
-    </form>
-</body>
-</html>
+        <br />
+</asp:Content>
+

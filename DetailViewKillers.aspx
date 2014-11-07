@@ -32,7 +32,15 @@
             </UpdateParameters>
         </asp:SqlDataSource>
         <br />
-        <asp:DetailsView ID="DV_KillersDetail" runat="server" AutoGenerateRows="False" DataKeyNames="ID" DataSourceID="Sql_DetailView" Height="71px" Width="468px">
+        <asp:DetailsView 
+            class ="DetailGrid"
+            FieldHeaderStyle-CssClass ="FieldHeader"
+            CommandRowStyle-CssClass ="Command"
+            ID="DV_KillersDetail" 
+            runat="server" 
+            AutoGenerateRows="False" 
+            DataKeyNames="ID" 
+            DataSourceID="Sql_DetailView">
             <Fields>
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                 <asp:BoundField DataField="Country" HeaderText="Country" SortExpression="Country" />
@@ -42,6 +50,7 @@
                 <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
             </Fields>
         </asp:DetailsView>
+        <br />
         <br />
 </asp:Content>
 

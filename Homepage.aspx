@@ -7,5 +7,9 @@
 
     <img class="center_img" src="./Images/death.png" alt="death" />
 
+    <br />
+
+    <br />
+
 </asp:Content>
 

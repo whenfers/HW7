@@ -27,9 +27,13 @@
 
         <div id="menu">
         <ul id="nav">
-            <li><asp:HyperLink ID="link_Home" runat="server" NavigateUrl="~/Homepage.aspx">Home</asp:HyperLink></li>
-            <li><asp:HyperLink ID="link_ViewAll" runat="server" NavigateUrl="~/Default.aspx">View Recorded Killers</asp:HyperLink></li>
-            <li><asp:HyperLink ID="link_Admin" runat="server" NavigateUrl="~/Admin/Homepage.aspx">Admin</asp:HyperLink></li>
+            <li><asp:HyperLink ID="link_Home" runat="server" NavigateUrl="~/Homepage.aspx" ForeColor="Black">Home</asp:HyperLink></li>
+            <li><asp:HyperLink ID="link_ViewAll" runat="server" NavigateUrl="~/Default.aspx" ForeColor="Black">View Recorded Killers</asp:HyperLink></li>
+            <li><asp:HyperLink ID="link_Admin" runat="server" NavigateUrl="~/Admin/Homepage.aspx" ForeColor="Black">Admin</asp:HyperLink></li>
+            <li> <asp:LoginStatus ID="LoginStatus1" runat="server" ForeColor="Black" /></li>
+            <li><asp:HyperLink ID="link_Seach" runat="server" NavigateUrl="~/search.aspx" ForeColor="Black">Search</asp:HyperLink></li>
+            <li><asp:HyperLink ID="link_About" runat="server" NavigateUrl="~/about.aspx" ForeColor="Black">About Serial Killers</asp:HyperLink></li>
+            <li><asp:HyperLink ID="link_Contact" runat="server" NavigateUrl="~/contact.aspx" ForeColor="Black">Contact Us</asp:HyperLink></li>
         </ul>
         </div> <!-- close the menu DIV -->
 
@@ -40,7 +44,8 @@
         </div> <!-- close the main DIV -->
     
         <div id="footer">
-            &copy; 2014 MSCI:3300 - Software Design and Development
+            &copy; 2014 MSCI:3300 - Software Design and Development&nbsp;&nbsp;
+            <asp:Label ID="lb_date" runat="server"></asp:Label>
         </div>  <!-- close the footer DIV -->
         
     

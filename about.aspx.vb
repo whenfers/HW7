@@ -1,5 +1,5 @@
 ﻿
-Partial Class Login_login
+Partial Class about
     Inherits System.Web.UI.Page
 
 End Class

@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/SerialKillers.master" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="Admin_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    Serial Killers - List of serial killers by number of victims
+    <title>Serial Killers - List of serial killers by number of victims</title> 
+    <link rel="stylesheet" type="text/css" href="../Css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/admin_stylesheet.css" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -28,10 +30,8 @@
             </UpdateParameters>
         </asp:SqlDataSource>
         <br />
-        <asp:HyperLink ID="InsertNewKiller" runat="server" NavigateUrl="~/Admin/InsertNewKillers.aspx">New Killer Record</asp:HyperLink>
         <br />
-        <br />
-        <asp:GridView ID="GV_Default" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="Sql_Default">
+        <asp:GridView class="defaultGrid" ID="GV_Default" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="Sql_Default" PageSize="11">
             <Columns>
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                 <asp:BoundField DataField="Country" HeaderText="Country" SortExpression="Country" />
